@@ -1,17 +1,17 @@
-# Parcels
+# Job Board
 
-#### App to calculate shipping estimates, Current Version: 03.10.2020
+#### App to post job listings, Current Version: 03.10.2020
 
 #### By Jack Dunning and Andrew Philpott
 
 ## Description
 
-Project for Epicodus to practice the MVC format that calculates the estimated shipping cost based on weight and height the user gives.
+Project for Epicodus to practice the MVC format that allows a user to post a job listing to a virtual job board. The job listing requires you to enter a title and description for the job aswell as contact information.
 
 ## Setup/Installation Requirements
 
 - Clone the repo to your desktop
-- From the root folder \$ cd MadLibs
+- From the root folder \$ cd JobBoard
 - \$ dotnet restore
 - \$ dotnet run
 - The app should host on http://localhost:5000
@@ -19,11 +19,13 @@ Project for Epicodus to practice the MVC format that calculates the estimated sh
 ## Specs
 
 - When user opens localhost.
+
   - Sample input: put "http://localhost:5000" in address bar and hit enter
-  - Expected output: the homepage, "Andrew and Jack's Shipping"
-- If user clicks create a new parcel it will bring them to a new page.
-  - Sample input: click "create new parcel."
-  - Expected output: the new page "Add a new parcel"
+  - Expected output: the homepage, "Andrew and Jack's Job Board"
+
+- If user clicks create a new job isting it will bring them to a new page.
+  - Sample input: click "add new job listing."
+  - Expected output: the new page "Add a new job to the board."
 
 ## Known Bugs
 
@@ -33,6 +35,7 @@ Project for Epicodus to practice the MVC format that calculates the estimated sh
 
 - C#
 - .NET
+- MVC
 
 ### License
 

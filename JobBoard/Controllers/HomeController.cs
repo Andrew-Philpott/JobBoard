@@ -11,11 +11,11 @@ namespace JobBoard.Controllers
       return View();
     }
 
-    [HttpGet("/jobboard")]
-    public ActionResult Index()
-    {
-      return View();
-    }
+    // [HttpGet("/jobboard")]
+    // public ActionResult Index()
+    // {
+    //   return View();
+    // }
 
     [HttpGet("/jobboard/new")]
     public ActionResult New()
@@ -23,10 +23,10 @@ namespace JobBoard.Controllers
       return View();
     }
 
-    [HttpPost("/jobboard")]
-    public ActionResult New(string )
-    {
-      return View();
-    }
+    // [HttpPost("/jobboard")]
+    // public ActionResult New()
+    // {
+    //   return View();
+    // }
   }
 }

@@ -11,18 +11,5 @@ namespace JobBoard.Controllers
     {
       return View();
     }
-
-    [HttpGet("/JobBoard/new")]
-    public ActionResult New()
-    {
-      return View();
-    }
-
-    [HttpPost("/JobBoard")]
-    public ActionResult New()
-    {
-
-      return View();
-    }
   }
 }
