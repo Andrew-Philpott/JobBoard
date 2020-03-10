@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="jumbotron">
+  <h1>Jobs in your area</h1>
+</div>
+<div>
+
+  @foreach(JobOpening job in @Model)
+  {
+    <h3>@job.Title</h3>
+    <p>@job.Description</p>
+
+    <p>Name: @job.Contact.Name</p>
+    <p>Email: @job.Contact.Email</p>
+    <p>Phone Number: @job.Contact.PhoneNumber</p>
+  }
+
+<h3><a href='/'>Home</a><h3>
