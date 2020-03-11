@@ -23,13 +23,13 @@
     <h2>Jobs near you</h2>
     @foreach(JobOpening job in Model)
     {
-      <li>
-        <h2>@job.Title</h2>
-        <p>@job.Description</p>
-        <p>@job.Contact.Email</p>
-        <p>@job.Contact.PhoneNumber</p>
-        <p>@job.Contact.Email</p>
-      </li>
+      <h2>@job.Title</h2>
+      <p>Description: @job.Description</p>
+      <div>
+        <p>@job.Contact.Name</p>
+        <p>Phone: @job.Contact.PhoneNumber</p>
+        <p>Email: @job.Contact.Email</p>
+      </div> 
     }
   }
 </div>

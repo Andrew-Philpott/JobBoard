@@ -9,23 +9,18 @@ namespace JobBoard.Models
 
     public string Description { get; }
 
-    public Contact Contact { get; set; }
+    public Contact Contact { get; }
 
     private static List<JobOpening> JobOpenings = new List<JobOpening>();
 
-    public JobOpening(string title, string description)
+    public JobOpening(string title, string description, Contact contact)
     {
       Title = title;
       Description = description;
+      Contact = contact;
       Id = JobOpenings.Count;
       JobOpenings.Add(this);
     }
-
-    public void AddContact(Contact contact)
-    {
-      Contact = contact;
-    }
-
     public static List<JobOpening> GetAllJobOpenings()
     {
       return JobOpenings;

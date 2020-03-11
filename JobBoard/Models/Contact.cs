@@ -21,7 +21,6 @@ namespace JobBoard.Models
       _contacts.Add(this);
       Id = _contacts.Count;
     }
-
     public List<JobOpening> GetJobListings()
     {
       return _jobOpenings;

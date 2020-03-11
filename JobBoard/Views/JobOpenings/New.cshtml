@@ -1,34 +1,27 @@
+@using JobBoard.Models;
+
 @{
   Layout = "_Layout";
 }
 
 <div class="jumbotron">
-  <h1>Create a Job Opening</h1>
+  <h1>Create a job listing</h1>
 </div>
 <div>
-<h1></h1>
 
-<form action="/jobboard" method="post">
+<form action="/contacts/@Model.Id/jobopenings" method="post">
+<input id="contactId" name="contactId" type="hidden" value="@Model.Id">
   <div class="form-group">
-    <label for="title">Title: </label>
+    <h3>Title</h3>
     <input id="title" name="title" type="text">
   </div>
   <div class="form-group">
-    <label for="description">Description: </label>
-    <input id="description" name="description" type="text">
+    <h3>Description</h3>
+    <textarea rows="4" cols="50" id="description" name="description" type="text"></textarea>
+
   </div>
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input id="name" name="name" type="text">
-  </div>
-<div class="form-group">
-<label for="email">Email:</label>
-  <input id="email" name="email" type="text">
-</div>
-<div class="form-group">
-<label for="phoneNumber">Phone Number:</label>
-  <input id="phoneNumber" name="phoneNumber" type="text">
-</div>
+  <button type="submit">Add listing</button>
 </form>
+<br>
 <h3><a href='/'>Home</a><h3>
 

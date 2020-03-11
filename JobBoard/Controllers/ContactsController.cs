@@ -11,6 +11,16 @@ namespace JobBoard.Controllers
     {
       return View(contact);
     }
+    [HttpPost("/contacts")]
+    public ActionResult Create(string name, string email, string phoneNumber)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Contact foundContact = new Contact(name, email, phoneNumber);
+      List<JobOpening> contactJobListings = foundContact.GetJobListings();
+      model.Add("contact", foundContact);
+      model.Add("joblistings", contactJobListings);
+      return View("Index", model);
+    }
 
     [HttpGet("/contacts/new")]
     public ActionResult New()
@@ -18,22 +28,28 @@ namespace JobBoard.Controllers
       return View();
     }
 
-    [HttpGet("/contacts/show")]
-    public ActionResult Show(int id)
+    // [HttpGet("/contacts/show")]
+    // public ActionResult Show(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Contact foundContact = Contact.FindContact(id);
+    //   List<JobOpening> contactJobListings = foundContact.GetJobListings();
+    //   model.Add("contact", foundContact);
+    //   model.Add("joblistings", contactJobListings);
+    //   return View(model);
+    // }
+
+    [HttpPost("/contacts/{contactId}/jobopenings")]
+    public ActionResult AddListing(int contactId, string title, string description)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Contact foundContact = Contact.FindContact(id);
+      Contact foundContact = Contact.FindContact(contactId);
+      JobOpening job = new JobOpening(title, description, foundContact);
+      foundContact.AddJobOpening(job);
       List<JobOpening> contactJobListings = foundContact.GetJobListings();
       model.Add("contact", foundContact);
       model.Add("joblistings", contactJobListings);
-      return View(model);
-    }
-
-    [HttpPost("/contacts")]
-    public ActionResult Create(string name, string email, string phoneNumber)
-    {
-      Contact contact = new Contact(name, email, phoneNumber);
-      return RedirectToAction("Index", contact);
+      return View("Index", model);
     }
   }
 }
