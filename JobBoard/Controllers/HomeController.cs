@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using JobBoard.Models;
+using System.Collections.Generic;
 
 namespace JobBoard.Controllers
 {
@@ -8,25 +9,8 @@ namespace JobBoard.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      List<JobOpening> allJobListings = JobOpening.GetAllJobOpenings();
+      return View(allJobListings);
     }
-
-    // [HttpGet("/jobboard")]
-    // public ActionResult Index()
-    // {
-    //   return View();
-    // }
-
-    [HttpGet("/jobboard/new")]
-    public ActionResult New()
-    {
-      return View();
-    }
-
-    // [HttpPost("/jobboard")]
-    // public ActionResult New()
-    // {
-    //   return View();
-    // }
   }
 }

@@ -1,0 +1,15 @@
+.option {
+  width: 48%;
+  height: 20%;
+  border: 2px solid red;
+}
+#option-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+#contact h3 {
+  display: flex;
+  justify-content: center;
+}

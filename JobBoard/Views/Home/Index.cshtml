@@ -1,13 +1,35 @@
+@using JobBoard.Models;
+
 @{ Layout = "_Layout"; }
 
 <div class="jumbotron">
   <h1>Andrew and Jack's Job Board</h1>
   <p class="lead">Post and look at job listings.</p>
 </div>
-<div>
-  <h2>See job listenings in your area</h2>
-  <a href="/jobboard">Add Job Listenings</a>
-
-  <h2>Employer Sign in</h2>
-  <a href="/contacts">Sign in</a>
+  <div id="option-container">
+  <div class="option">
+    <h2>Refine your search</h2>
+    <a href="/jobboard">Add Job Listenings</a>
+  </div>
+  <div class="option">
+    <h2>Employer Sign in</h2>
+    <a href="/contacts/new">Sign in</a>
+  </div>
+</div>
+<div id="jobs-list">
+@if(Model.Count == 0) {
+  <h2>No job listings yet</h2>
+} else {
+    <h2>Jobs near you</h2>
+    @foreach(JobOpening job in Model)
+    {
+      <li>
+        <h2>@job.Title</h2>
+        <p>@job.Description</p>
+        <p>@job.Contact.Email</p>
+        <p>@job.Contact.PhoneNumber</p>
+        <p>@job.Contact.Email</p>
+      </li>
+    }
+  }
 </div>

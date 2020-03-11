@@ -1,12 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace JobBoard.Models
 {
-
   public class JobOpening
   {
+    public int Id { get; }
     public string Title { get; }
 
     public string Description { get; }
@@ -28,7 +26,8 @@ namespace JobBoard.Models
       Contact = contact;
     }
 
-    public static List<JobOpening> GetAllJobOpenings(){
+    public static List<JobOpening> GetAllJobOpenings()
+    {
       return JobOpenings;
     }
   }

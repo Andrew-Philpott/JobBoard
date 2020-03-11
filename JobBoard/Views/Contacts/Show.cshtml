@@ -3,17 +3,13 @@
 @{
   Layout = "_Layout";
 }
-<div id="contact">
-  <h1>Model.Name</h1>
-  <br>
-  <br>
-@if(@Model.GetJobListings().Count == 0) {
+
+@if(@Model.Count == 0) {
   <h3>You have not posted any jobs</h3>
 } else {
-
 <h3>Your job postings</h3>
 <ul>
-@foreach(JobOpening job in @Model["joblistings"])
+@foreach(JobOpening job in Model["joblistings"])
 {
   <li>
   <h2>@job.Title</h2>
@@ -21,9 +17,7 @@
   <p>@job.Contact.Email</p>
   <p>@job.Contact.PhoneNumber</p>
   <p>@job.Contact.Email</p>
-  <p>Edit Listing</p>
   </li>
 }
 </ul>
 }
-</div>

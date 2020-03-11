@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using JobBoard.Models;
-using System.Threading.Tasks;
 
 namespace JobBoard.Controllers
 {
-  public class JobBoardController : Controller
+  public class JobOpeningsController : Controller
   {
-    [HttpGet("/JobBoard")]
+    [HttpGet("/jobopenings")]
     public ActionResult Index()
     {
       return View();
